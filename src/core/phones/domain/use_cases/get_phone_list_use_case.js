@@ -1,7 +1,5 @@
-import { PhoneReposiory } from '../../data/repositories/phone_repositories';
+import { PhoneReposiory } from 'core/phones/data/repositories/phone_repositories';
 
-const GetPhoneLisUseCase = async () => {
-  return await PhoneReposiory.fetchAllPhoneList();
-};
+const GetPhoneLisUseCase = async () => PhoneReposiory.fetchAllPhoneList();
 
-export {GetPhoneLisUseCase};
+export { GetPhoneLisUseCase };

@@ -1,21 +1,9 @@
-import ApiNetwork from '../../../../common/network/api_network';
+import ApiNetwork from 'common/network/api_network';
 
 const PhoneReposiory = {
-  fetchAllPhoneList: async () => {
-    return await ApiNetwork.get('/phones');
-  },
-  createPhone: async (body) => {
-    return await ApiNetwork.postFormData('phones', body);
-  },
-  deletePhone: async (phoneId, photoId) => {
-    return await ApiNetwork.post(`phones/delete/${phoneId}`, {photoId});
-  },
-  updatePhoneWithImage: async (body) => {
-    return await ApiNetwork.putFormData('phones/update-with-image', body);
-  },
-  updatePhone: async (body) => {
-    return await ApiNetwork.put('phones/update', body);
-  },
+  fetchAllPhoneList: async () => await ApiNetwork.get('/phones'),
+  fetchPhoneById: async (id) => await ApiNetwork.get(`/phones/${id}`),
+  deletePhone: async (phoneId, photoId) =>  await ApiNetwork.post(`phones/delete/${phoneId}`, {photoId}),
 };
 
 export {PhoneReposiory};

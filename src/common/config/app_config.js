@@ -1,17 +1,14 @@
 const AppConfig = {
-  selectedServer: 'prod',
+  // eslint-disable-next-line no-undef
+  selectedServer: process.env.REACT_APP_ENV,
   servers: {
-    prod: {
-      api: 'https://phone-keeper.herokuapp.com/',
-      public: 'https://phone-keeper.herokuapp.com/',
+    production: {
+      api: 'https://front-live-coding-api.herokuapp.com/',
+      public: 'https://front-live-coding-api.herokuapp.com/',
     },
-    beta: {
-      api: '',
-      public: '',
-    },
-    local: {
-      api: 'http://localhost:3000/',
-      public: 'http://localhost:3000/',
+    development: {
+      api: 'http://localhost:4000/',
+      public: 'http://localhost:4000/',
     },
   },
   host: function () {
@@ -20,7 +17,14 @@ const AppConfig = {
   hostPublic: function () {
     return this.servers[this.selectedServer].public;
   },
-  authHeaders: () => {},
+  defaultHeaders: () => {
+    return {}
+  },
+  authHeaders: () => {
+    return {
+      'X-User-Id': '88',
+    };
+  },
 };
 
-export default AppConfig;
+export { AppConfig };

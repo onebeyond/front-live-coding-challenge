@@ -1,19 +1,15 @@
+import React from 'react';
 
 import './App.css';
 
-import { Provider } from 'react-redux';
-
-import generateStore from './ui/store/redux/store';
-
-import { AppNavigation } from './ui/navigation';
+import { AppNavigation } from 'ui/navigation';
+import { ContextController } from 'ui/store/context/context_controller';
 
 const App = () => {
-  const store = generateStore();
-
   return (
-    <Provider store={store} >
+    <ContextController>
       <AppNavigation />
-    </Provider>
+    </ContextController>
   );
 }
 

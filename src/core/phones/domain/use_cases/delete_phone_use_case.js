@@ -1,12 +1,5 @@
-import { PhoneReposiory } from '../../data/repositories/phone_repositories';
+import { PhoneReposiory } from 'core/phones/data/repositories/phone_repositories';
 
-const DeletePhoneUseCase = async (phoneId, photoId) => {
-  try {
-    await PhoneReposiory.deletePhone(phoneId, photoId);
-    return true;
-  } catch (e) {
-    return false;
-  }
-};
+const DeletePhoneUseCase = async (phoneId) => await PhoneReposiory.deletePhone(phoneId);
 
 export {DeletePhoneUseCase};
