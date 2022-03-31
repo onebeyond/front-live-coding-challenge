@@ -2,7 +2,8 @@ import React, { useEffect, memo } from 'react';
 
 import { HomeScreenStyled, TitleStyled } from './home_screen.styled';
 
-import { PhoneCard } from 'ui/containers/home_screen/components/phone_card'
+import { PhoneCard } from 'ui/containers/home_screen/components/phone_card';
+
 import { usePhoneContext } from 'ui/store/context/phone_context';
 
 const HomeScreen = memo(() => {

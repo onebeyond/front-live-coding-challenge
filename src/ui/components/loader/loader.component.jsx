@@ -1,12 +1,11 @@
+import React from 'react';
+
 import { LoaderStyled } from './loader.styled';
 
-const Loader = () => {
-  //@TODO - Add Loading animation
-  return (
-    <LoaderStyled>
-      
-    </LoaderStyled>
-  );
-}
+const Loader = () => (
+  <LoaderStyled>
+    Loading
+  </LoaderStyled>
+);
 
 export { Loader };

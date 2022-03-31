@@ -1,45 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
-import { PhoneCardStyled, TextStyled, ImageStyled } from './phone_card.styled';
+import { PhoneCardStyled, TextStyled, SeeDetailButtonStyled, ImageStyled } from './phone_card.styled';
 
 const PhoneCard = ({ phone }) => {
-  console.log('phone', phone);
   const {
-    color,
-    description,
-    // id,
+    id,
     imageFileName,
     manufacturer,
     name,
     price,
-    processor,
-    ram,
-    screen,
   } = phone;
+  const navigate = useNavigate();
+  const onClickSeeDetails = () => {
+    navigate(`/details/${id}`);
+  };
+
   return (
     <PhoneCardStyled>
       <TextStyled large>
         {name} ({manufacturer})
       </TextStyled>
       <TextStyled medium>
-        {description}
+        Price: ${price}
       </TextStyled>
-      <TextStyled medium>
-        Processor: {processor}
-      </TextStyled>
-      <TextStyled medium>
-        Ram: {ram}
-      </TextStyled>
-      <TextStyled medium>
-        Screen: {screen}
-      </TextStyled>
-      <TextStyled medium>
-        Color: {color}
-      </TextStyled>
-      <TextStyled medium>
-        Price: {price}
-      </TextStyled>
+      <SeeDetailButtonStyled onClick={onClickSeeDetails}>
+        See details
+      </SeeDetailButtonStyled>
       <ImageStyled src={imageFileName} atl={`${name}-image`}/>
     </PhoneCardStyled>
   )

@@ -1,8 +1,9 @@
 import React, { createContext, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
-import { ErrorHandler } from 'common/utils/error_handler';
-import { GetPhoneLisUseCase } from 'core/phones/domain/use_cases'
+import { GetPhoneLisUseCase, GetPhoneByIdUseCase } from 'core/phones/domain/use_cases'
+
+import { useSnackbarContext } from 'ui/store/context/snackbar_context';
 
 export const PhoneContext = createContext(null);
 
@@ -23,22 +24,28 @@ const PhoneContextProvider = ({ children }) => {
   const [state, setState] = useState(initialState);
   const { phones, selectedPhone } = state;
 
+  const { setError } = useSnackbarContext();
+
   const fetchAllPhones = useCallback(async () => {
-    //@TODO  add error handler
     try {
       const res = await GetPhoneLisUseCase();
-      if (res.data) {
-        setState({...state, phones: res.data})
+      if (res?.data) {
+        setState({ ...state, phones: res.data })
       }
     } catch(e) {
-      ErrorHandler(e);
+      setError(e.message);
     }
   }, []);
 
   const fetchPhoneById = useCallback(async(id) => {
-    //@TODO  add error handler
-    const selectedPhone = await GetPhoneLisUseCase(id);
-    setState({...state, selectedPhone})
+    try {
+      const res = await GetPhoneByIdUseCase(id);
+      if (res?.data) {
+        setState({ ...state, selectedPhone: res.data })
+      }
+    } catch(e) {
+      setError(e.message);
+    }
   }, []);
 
   return (

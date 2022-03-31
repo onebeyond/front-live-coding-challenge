@@ -11,6 +11,11 @@ const ApiNetwork = {
     const headers = { ...AppConfig.defaultHeaders, ...AppConfig.authHeaders() };
     const res = await api.get(url, { headers });
     return res;
+  },
+  delete: async (url) => {
+    const headers = { ...AppConfig.defaultHeaders, ...AppConfig.authHeaders() };
+    const res = await api.delete(url, { headers });
+    return res;
   }
 };
 

@@ -1,0 +1,1 @@
+export { DefaultButton } from 'ui/components/buttons/default_button/default_button.component';

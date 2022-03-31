@@ -1,0 +1,1 @@
+export { Snackbar } from 'ui/components/snackbar/snackbar.component';

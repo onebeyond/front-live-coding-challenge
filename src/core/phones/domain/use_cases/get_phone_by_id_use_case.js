@@ -1,5 +1,5 @@
 import { PhoneReposiory } from 'core/phones/data/repositories/phone_repositories';
 
-const GetPhoneByIdUseCase = async () => await PhoneReposiory.fetchPhoneById();
+const GetPhoneByIdUseCase = async (id) => await PhoneReposiory.fetchPhoneById(id);
 
 export { GetPhoneByIdUseCase };

@@ -9,6 +9,7 @@ const spacing = {
   xxl: 28,
   xxxl: 32,
   xxxxl: 40,
+  xxxxxl: 60,
 }
 
 export { spacing };
