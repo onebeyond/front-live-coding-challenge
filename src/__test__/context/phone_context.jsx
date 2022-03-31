@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { GetPhoneLisUseCase, GetPhoneByIdUseCase } from 'core/phones/domain/use_cases';
 
-import { useSnackbarContext } from 'ui/store/context/snackbar_context';
+import { useSnackbarContext } from './snackbar_context';
 
 export const PhoneContext = createContext(null);
 
