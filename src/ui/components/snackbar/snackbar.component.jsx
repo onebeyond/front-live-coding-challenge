@@ -8,7 +8,7 @@ const Snackbar = () => {
   const { message, isError } = useSnackbarContext();
   
   return (
-    <SnackBarStyled message={message} isError={isError}>
+    <SnackBarStyled message={message} isError={isError} data-cy={'snackbar'}>
       {message}
     </SnackBarStyled>
   )

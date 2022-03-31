@@ -21,8 +21,8 @@ const HomeScreen = memo(() => {
   }
 
   return (
-    <HomeScreenStyled>
-      <TitleStyled>Coolest Phone List</TitleStyled>
+    <HomeScreenStyled data-cy={'homescreen'}>
+      <TitleStyled data-cy={'homescreen-title'}>Coolest Phone List</TitleStyled>
       {renderPhoneList()}
     </HomeScreenStyled>
   )

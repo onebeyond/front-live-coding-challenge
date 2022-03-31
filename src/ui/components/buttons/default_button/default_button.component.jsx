@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import { DefaultButtonStyled } from './default_button.styled';
 
-const DefaultButton = ({ onClick, children }) => {
+const DefaultButton = ({ onClick, children, dataCy }) => {
   return (
-    <DefaultButtonStyled onClick={onClick}>
+    <DefaultButtonStyled onClick={onClick} data-cy={dataCy}>
       {children}
     </DefaultButtonStyled>
   )
@@ -14,6 +14,7 @@ const DefaultButton = ({ onClick, children }) => {
 DefaultButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
+  dataCy: PropTypes.string.isRequired,
 }
 
 export { DefaultButton };

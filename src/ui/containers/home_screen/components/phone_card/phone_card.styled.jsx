@@ -4,6 +4,7 @@ import { colors, spacing } from 'ui/styles';
 export const PhoneCardStyled = styled.div`
   display: flex;
   width: 45%;
+  min-width: 300px;
   height: fit-content;
   border: 1px solid ${colors.primary};
   border-radius: ${spacing.s}px;

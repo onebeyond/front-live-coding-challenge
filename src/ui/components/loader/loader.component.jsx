@@ -3,7 +3,7 @@ import React from 'react';
 import { LoaderStyled } from './loader.styled';
 
 const Loader = () => (
-  <LoaderStyled>
+  <LoaderStyled data-cy={'loader'}>
     Loading
   </LoaderStyled>
 );

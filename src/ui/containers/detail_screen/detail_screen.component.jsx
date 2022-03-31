@@ -39,38 +39,38 @@ const DetailScreen = memo(() => {
       screen,
     } = selectedPhone;
     return (
-      <ContentStyled>
-        <DefaultButton onClick={onPressBack}>
+      <ContentStyled data-cy={'detail-screen-content'}>
+        <DefaultButton onClick={onPressBack} dataCy={'detail-screen-content-back-button'}>
           Back
         </DefaultButton>
-        <TextStyled large marginTop>
+        <TextStyled large marginTop data-cy={'detail-screen-content-name'}>
           {name} ({manufacturer})
         </TextStyled>
-        <TextStyled>
+        <TextStyled data-cy={'detail-screen-content-description'}>
           {description}
         </TextStyled>
-        <TextStyled>
+        <TextStyled data-cy={'detail-screen-content-price'}>
           Price: ${price}
         </TextStyled>
-        <TextStyled>
+        <TextStyled data-cy={'detail-screen-content-proccessor'}>
           Processor: {processor}
         </TextStyled>
-        <TextStyled>
+        <TextStyled data-cy={'detail-screen-content-ram'}>
           Ram: {ram}
         </TextStyled>
-        <TextStyled>
+        <TextStyled data-cy={'detail-screen-content-screen'}>
           Screen: {screen}
         </TextStyled>
-        <TextStyled>
+        <TextStyled data-cy={'detail-screen-content-color'}>
           Color: {color}
         </TextStyled>
-        <ImageStyled src={imageFileName} />
+        <ImageStyled src={imageFileName} data-cy={'detail-screen-content-image'}/>
       </ContentStyled>
     )
   }
 
   return (
-    <DetailScreenStyled hasData={selectedPhone}>
+    <DetailScreenStyled hasData={selectedPhone} data-cy={'detail-screen'}>
       {renderContent()}
     </DetailScreenStyled>
   )

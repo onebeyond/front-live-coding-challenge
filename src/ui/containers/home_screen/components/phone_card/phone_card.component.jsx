@@ -18,17 +18,17 @@ const PhoneCard = ({ phone }) => {
   };
 
   return (
-    <PhoneCardStyled>
-      <TextStyled large>
+    <PhoneCardStyled data-cy={'phone-card'}>
+      <TextStyled large data-cy={'phone-card-name'}>
         {name} ({manufacturer})
       </TextStyled>
-      <TextStyled medium>
+      <TextStyled medium data-cy={'phone-card-price'}>
         Price: ${price}
       </TextStyled>
-      <SeeDetailButtonStyled onClick={onClickSeeDetails}>
+      <SeeDetailButtonStyled onClick={onClickSeeDetails} data-cy={'phone-card-see-detail-button'}>
         See details
       </SeeDetailButtonStyled>
-      <ImageStyled src={imageFileName} atl={`${name}-image`}/>
+      <ImageStyled src={imageFileName} atl={`${name}-image`}data-cy={'phone-card-image'} />
     </PhoneCardStyled>
   )
 };

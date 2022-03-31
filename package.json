@@ -20,9 +20,8 @@
     "dev": "REACT_APP_ENV=development react-scripts start",
     "start": "REACT_APP_ENV=production react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "cypress": "cypress open-ct"
+    "test": "cypress open",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
