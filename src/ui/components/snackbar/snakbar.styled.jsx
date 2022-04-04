@@ -15,14 +15,15 @@ export const SnackBarStyled = styled.div`
   text-align: center;
   visibility: hidden;
   z-index: 1;
-  ${props => props.isError && `
+  ${props => `color: ${props.isError ? colors.error : colors.primary };`}
+  ${props => props.message && `
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
+  visibility: visible;
+  `};
+  ${props => !props.message && `
     opacity: 0;
     transition: visibility 0s linear .3s, opacity .3s;
     visibility: hidden;
-  `};
-  ${props => props.message && `
-    opacity: 1;
-    transition: visibility 0s linear 0s, opacity 300ms;
-    visibility: visible;
   `};
 `;
