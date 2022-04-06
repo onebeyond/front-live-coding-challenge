@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
     "formik": "^2.2.9",
+    "lint-staged": ">=10",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -21,13 +22,18 @@
     "start": "REACT_APP_ENV=production react-scripts start",
     "build": "react-scripts build",
     "test": "cypress open",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "lint-staged",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   },
   "browserslist": {
     "production": [
@@ -42,10 +48,13 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
     "@cypress/react": "^5.12.4",
     "@cypress/webpack-dev-server": "^1.8.4",
     "cypress": "^9.5.3",
     "eslint": "^8.12.0",
-    "eslint-plugin-react": "^7.29.4"
+    "eslint-plugin-react": "^7.29.4",
+    "husky": "^7.0.4"
   }
 }

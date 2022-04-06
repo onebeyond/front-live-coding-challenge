@@ -20,8 +20,7 @@ const PhoneCard = ({ phone }) => {
   return (
     <PhoneCardStyled data-cy={'phone-card'}>
       <TextStyled large data-cy={'phone-card-name'}>
-        {name} ({manufacturer})
-      </TextStyled>
+        {name} ({manufacturer})</TextStyled>
       <TextStyled medium data-cy={'phone-card-price'}>
         Price: ${price}
       </TextStyled>
