@@ -21,10 +21,12 @@
     "dev": "REACT_APP_ENV=development react-scripts start",
     "start": "REACT_APP_ENV=production react-scripts start",
     "build": "react-scripts build",
-    "test": "cypress open",
     "eject": "react-scripts eject",
     "lint": "lint-staged",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test:unit": "jest --coverage --verbose",
+    "test:integration": "npm start & wait-on http://localhost:8080 & cypress run",
+    "test": "npm run test:unit && npm run test:integration"
   },
   "eslintConfig": {
     "extends": [
@@ -32,8 +34,15 @@
       "react-app/jest"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "*.js": [
+      "eslint --fix"
+    ]
   },
   "browserslist": {
     "production": [
