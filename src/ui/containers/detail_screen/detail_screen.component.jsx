@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { DetailScreenStyled, ContentStyled, TextStyled, ImageStyled } from './detail_screen.styled';
@@ -8,9 +8,17 @@ import { DefaultButton } from 'ui/components/buttons/default_button';
 import { usePhoneContext } from 'ui/store/context/phone_context';
 
 const DetailScreen = memo(() => {
+  // eslint-disable-next-line no-unused-vars
+  const [ _, setCounter ] = useState(0);
   const { id } = useParams();
   const navigate = useNavigate();
   const { selectedPhone, fetchPhoneById } = usePhoneContext();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCounter(prev => prev + 1);
+    }, [1000]);
+  }, []);
 
   useEffect(() => {
     if (id) {
