@@ -68,13 +68,12 @@ https://front-live-coding-api.herokuapp.com/__/docs/api/
 
 With your teammates’ help, you must complete the tasks given to the highest possible quality, always following the Team Agreements:
 
-&nbsp;&nbsp;&nbsp;&nbsp;1️⃣ Try to execute the code locally and verify that it runs correctly. If not, try to solve any bugs you find until the app works as expected.
+&nbsp;&nbsp;&nbsp;&nbsp;1️⃣ Try to `execute the code locally and verify that it runs correctly`. If not, try to solve any bugs you find until the app works as expected. Try opening the WebConsole of your navigator to have more context. 😉
 
 &nbsp;&nbsp;&nbsp;&nbsp;2️⃣ Run the `unit tests` and verify that they run correctly. Otherwise, try to fix the bugs you find until the tests pass.
 
 &nbsp;&nbsp;&nbsp;&nbsp;3️⃣ Run the `integration tests` and verify that they run correctly. If not, try to solve any bugs you may find until the tests pass.
 
+&nbsp;&nbsp;&nbsp;&nbsp;4️⃣ Add a new `context` (with two properties: `message` and `isError`) to handle the errors in the API calls executed at `PhoneContext` and display them in the `Snackbar` component.
 
-&nbsp;&nbsp;&nbsp;&nbsp;4️⃣ Include the possibility to `remove a telephone from the catalogue view`, as well as the tests that check if the functionality is working correctly.
-
-&nbsp;&nbsp;&nbsp;&nbsp;5️⃣ Add the `detailed view of the phones`, as well as the tests that check if the functionality is working correctly.
+&nbsp;&nbsp;&nbsp;&nbsp;5️⃣ Include the possibility to `remove a phone from the detail view`, as well as the tests that check if the functionality is working correctly.
