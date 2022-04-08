@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 import { GetPhoneLisUseCase, GetPhoneByIdUseCase } from 'core/phones/domain/use_cases';
 
-import { useSnackbarContext } from 'ui/store/context/snackbar_context';
-
 export const PhoneContext = createContext(null);
 
 const usePhoneContext = () => {
@@ -24,7 +22,9 @@ const PhoneContextProvider = ({ children }) => {
   const [state, setState] = useState(initialState);
   const { phones, selectedPhone } = state;
 
-  const { setError } = useSnackbarContext();
+  const setError = () => {
+    // create method in snackbar context
+  }
 
   const fetchAllPhones = useCallback(async () => {
     try {

@@ -15,7 +15,7 @@ const DetailScreen = memo(() => {
   const { selectedPhone, fetchPhoneById } = usePhoneContext();
 
   useEffect(() => {
-    setTimeout(() => {
+    setInterval(() => {
       setCounter(prev => prev + 1);
     }, [1000]);
   }, []);

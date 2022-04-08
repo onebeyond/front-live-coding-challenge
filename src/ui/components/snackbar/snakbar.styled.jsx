@@ -17,9 +17,9 @@ export const SnackBarStyled = styled.div`
   z-index: 1;
   ${props => `color: ${props.isError ? colors.error : colors.primary };`}
   ${props => props.message && `
-  opacity: 1;
-  transition: visibility 0s linear 0s, opacity 300ms;
-  visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 300ms;
+    visibility: visible;
   `};
   ${props => !props.message && `
     opacity: 0;

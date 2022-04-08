@@ -10,7 +10,7 @@ const DefaultButton = ({ onClick, children, dataCy }) => {
       {children}
     </DefaultButtonStyled>
   )
-}
+};
 
 DefaultButton.propTypes = {
   onClick: PropTypes.func.isRequired,
