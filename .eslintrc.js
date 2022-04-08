@@ -20,5 +20,6 @@ module.exports = {
     ],
     "rules": {
         "react/display-name": "off",
-    }
+    },
+    "ignorePatterns": ['src/__test__/*']
 }

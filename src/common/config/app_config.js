@@ -1,6 +1,6 @@
 const AppConfig = {
   // eslint-disable-next-line no-undef
-  selectedServer: process.env.REACT_APP_ENV,
+  selectedServer: process.env.REACT_APP_ENV || 'development',
   servers: {
     production: {
       api: 'https://front-live-coding-api.herokuapp.com/',

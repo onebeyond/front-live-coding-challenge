@@ -7,7 +7,7 @@ describe('Renders Home screen', () => {
 
     cy.get('[data-cy="detail-screen"]').should('be.visible');
 
-    cy.wait('@fetchPhone').then(() => {
+    cy.wait('@Phone').then(() => {
       cy.get('[data-cy="detail-screen-content"]').should('be.visible');
       cy.get('[data-cy="detail-screen-content-back-button"]').should('be.visible');
       cy.get('[data-cy="detail-screen-content-name"]').should('be.visible');
