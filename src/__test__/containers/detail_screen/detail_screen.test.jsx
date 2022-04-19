@@ -8,11 +8,9 @@ import { SnackbarContextProvider } from '../../../ui/store/context/snackbar_cont
 
 test('DetailScreen render', () => {
   const detailScreen = render(
-    <SnackbarContextProvider>
-      <PhoneContextProvider>
-        <DetailScreen />
-      </PhoneContextProvider>
-    </SnackbarContextProvider>
+    <PhoneContextProvider>
+      <DetailScreen />
+    </PhoneContextProvider>
   );
   expect(detailScreen).toMatchSnapshot();
 })
