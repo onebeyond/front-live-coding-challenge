@@ -1,5 +1,4 @@
 const AppConfig = {
-  // eslint-disable-next-line no-undef
   selectedServer: process.env.REACT_APP_ENV || 'development',
   servers: {
     production: {
@@ -22,7 +21,7 @@ const AppConfig = {
   },
   authHeaders: () => {
     return {
-      'X-User-Id': '88',
+      'X-User-Id': process.env.REACT_APP_X_USER_ID
     };
   },
 };
